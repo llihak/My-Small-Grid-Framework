@@ -1,0 +1,112 @@
+// new repo 10/10/2019
+$bp-md: 760px;
+
+// fukol
+.rw,
+.flex {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin: -0.5em;
+  /* 5 (edit me!) */
+}
+
+.rw>*,
+.flex>* {
+  flex: 1 0 240px;
+  /* 3 (edit me!) */
+  margin: 0.5em;
+  /* 4 (edit me!) */
+}
+
+// end fukol
+.rw,
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  --gtcx: 240px;
+  --gtc: repeat(auto-fit, minmax(var(--gtcx), 1fr));
+  grid-template-columns: var(--gtc);
+  --gg: 1vh 2.5vw;
+  grid-gap: var(--gg);
+  grid-auto-flow: dense;
+}
+
+.rw>*,
+.grid>* {
+  // --gc: auto;
+  // grid-column: var(--gc);
+  --gce: span 1;
+  grid-column-end: var(--gce);
+  --gr: auto;
+  grid-row: var(--gr);
+  --gre: span 1;
+  grid-row-end: var(--gre);
+  --fb: var(--gtcx);
+  flex-basis: var(--fb);
+}
+
+.rw>.full,
+.grid>.full {
+  flex-basis: 100%;
+  grid-column: 1 / -1;
+}
+
+@media (min-width: $bp-md) {
+
+  .rw,
+  .grid {
+    --cols: 2;
+    --gtc: repeat(var(--cols), [col] 1fr);
+  }
+
+  /* rows */
+  .rw>*,
+  .grid>* {
+    --rspan: 1;
+    flex: var(--rspan);
+    --gre: span var(--rspan);
+    --cspan: 1;
+    flex: var(--cspan);
+    --gce: span var(--cspan);
+    --gcs: intitial;
+    grid-column-start: var(--gcs);
+    --gc: initial;
+    grid-column: var(--gc);
+  
+  }
+
+  // /* rows */
+  // .grid .rx {
+  //   --rspan: 1;
+  //   flex: var(--rspan);
+  //   --gre: span var(--rspan);
+  // }
+  // /* columns */
+  // .grid .cl {
+  //   --cspan: 1;
+  //   flex: var(--cspan);
+  //   --gce: span var(--cspan);
+  // }
+}
+
+
+// ******************  
+// for this demo only  
+// ******************  
+
+main > section + section {
+  margin-top: 20px;
+}
+
+section:nth-child(odd) {
+    background-color: #eee;
+  }
+
+  .cn {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title testing new grid (jade)
+        link(rel="stylesheet", href="css/grid.min.css")
+    body
+        main
+            section#Overview
+                div.cn.grid(style="--cols: 3")
+                    .hd.full
+                        h1 testing new grid
+                    .blurb(style="--cspan: 2")
+                        p well did this work then ??
+                    .monitor-pic(style="--cspan: 1; --gr: 4;")
+                        p {{ monitor pic }}
+                    .ft.full
+                        p footer
+            
+            section#Products
+                .cn.grid(style="--cols: 2")
+                    .hd.full
+                        h2 About our swell products
+                    .data.full
+                        h3 Our Data
+                    .rt
+                        h3 Real Time
+                    .dc
+                        h3 End of Day
+                    .ft.full
+                        p more ??
+
+            section#Featured
+                .cn.grid(style="--cols: 9;")
+                    .hd.full
+                        h2 Featured Content
+                    .main-featured(style="--cspan: 5;")
+                        h3 the big one
+                    .other-featured(style="--cspan: 4;")
+                        h4 another one
+                        h4 yet another
+                    .ft.full
+                        p more ???
